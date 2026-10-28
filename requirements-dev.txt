@@ -1,2 +1,2 @@
 -r requirements.txt
-pip-audit==2.7.3
+pip-audit==2.10.1
