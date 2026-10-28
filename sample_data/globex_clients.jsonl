@@ -1,0 +1,5 @@
+{"customer_ref": "GX-100", "customer": "Brian Kiptoo", "contact_email": "brian.kiptoo@example.com", "mobile": "+254 701 555 010", "country_code": "ke", "joined": "2024/02/11", "annual_spend": "22000", "is_active": "true"}
+{"customer_ref": "GX-101", "customer": "Ruth Achieng", "contact_email": "Ruth.Achieng@Example.com", "mobile": "0755 123 987", "country_code": "KEN", "joined": "20240318", "annual_spend": "KES 7,450", "is_active": "1"}
+{"customer_ref": "GX-102", "customer": "Ahmed Yusuf", "contact_email": "", "mobile": "0798 222 333", "country_code": "TZ", "joined": "2024-04-01", "annual_spend": "3100", "is_active": "0"}
+not valid json at all
+{"customer_ref": "GX-103", "customer": "Emily Clarke", "contact_email": "emily.clarke@example.com", "mobile": "+1 (415) 555-0134", "country_code": "USA", "joined": "March 9, 2024", "annual_spend": "18000.5", "is_active": "yes"}

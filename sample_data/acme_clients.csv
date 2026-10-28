@@ -1,0 +1,11 @@
+ClientID,Client Name,E-mail,Phone Number,Country,Signup Date,Revenue,Active?
+AC-001,  Wanjiru   Kamau ,WANJIRU.KAMAU@EXAMPLE.COM,+254 712 345 678,Kenya,2024-03-15,"$12,500.00",Yes
+AC-002,Daniel Otieno,daniel.otieno@example.com,0722 111 222,KE,15/04/2024,"8,200",yes
+AC-003,Grace Njeri,grace.njeri@example,0733 444 555,Kenya,2024-05-02,4300,no
+AC-004,Peter Mwangi,peter.mwangi@example.com,12,Kenya,2024-05-20,1000,Y
+AC-005,,anon@example.com,0711 000 000,Kenya,2024-06-01,500,yes
+AC-006,Amina Hassan,amina.hassan@example.com,00256 772 123 456,Uganda,1 Jul 2024,"15,750.25",TRUE
+AC-002,Daniel Otieno,daniel.o@example.com,0722 111 222,KE,2024-04-15,8200,yes
+AC-007,Liam Carter,liam.carter@example.com,+44 20 7946 0958,Britain,"Aug 05, 2024",N/A,no
+AC-008,Sofia Rossi,sofia.rossi@example.com,+39 06 1234 5678,Italy,2024-08-19,9900,yes
+AC-009,James Ochieng,james.ochieng@example.com,0700 987 654,Republic of Kenya,2024-13-01,3000,yes

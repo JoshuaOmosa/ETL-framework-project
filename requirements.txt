@@ -1,0 +1,5 @@
+# Runtime dependencies. The core framework uses only the standard library;
+# redis is needed only when ETL_STATE_URL points at a Redis server.
+# Versions are pinned so every environment runs the same, audited code.
+# Updates arrive as Dependabot PRs and must pass CI (tests + pip-audit).
+redis==5.2.1

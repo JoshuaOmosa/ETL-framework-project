@@ -1,0 +1,19 @@
+{
+  "name": "clients",
+  "table": "clients",
+  "key": "client_id",
+  "source_format": "csv",
+  "fields": [
+    {"name": "client_id",      "type": "string",  "required": true, "aliases": ["id", "ClientID", "customer_ref"]},
+    {"name": "full_name",      "type": "string",  "required": true, "aliases": ["name", "Client Name", "customer"]},
+    {"name": "email",          "type": "email",   "required": true, "aliases": ["E-mail", "email_address", "contact_email"]},
+    {"name": "phone",          "type": "phone",                     "aliases": ["Phone Number", "tel", "mobile"]},
+    {"name": "country",        "type": "country",                   "aliases": ["Country", "nation", "country_code"]},
+    {"name": "signup_date",    "type": "date",                      "aliases": ["Signup Date", "joined", "created"]},
+    {"name": "annual_revenue", "type": "decimal",                   "aliases": ["Revenue", "annual_spend"]},
+    {"name": "active",         "type": "bool",                      "aliases": ["Active?", "is_active", "status_active"]}
+  ],
+  "options": {
+    "country_aliases": {"Republic of Kenya": "KE", "Britain": "GB"}
+  }
+}

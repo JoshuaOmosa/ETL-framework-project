@@ -1,0 +1,53 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "0 6 * * 1"   # weekly: catch newly published vulnerabilities
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.12"]
+    services:
+      redis:
+        image: redis:7-alpine
+        ports: ["6379:6379"]
+        options: >-
+          --health-cmd "redis-cli ping" --health-interval 5s
+          --health-timeout 3s --health-retries 10
+    env:
+      REDIS_URL: redis://localhost:6379/0
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: pip install -r requirements.txt
+      - name: Unit + Redis integration tests
+        run: python -m unittest discover -s tests -t . -v
+      - name: End-to-end CLI run on sample data
+        run: |
+          PYTHONPATH=src python -m etl_ingest run pipelines/clients.json sample_data/acme_clients.csv
+          PYTHONPATH=src ETL_STATE_URL=$REDIS_URL python -m etl_ingest run pipelines/clients_jsonl.json sample_data/globex_clients.jsonl
+      - name: Package installs and exposes the etl-ingest command
+        run: |
+          pip install .
+          etl-ingest run pipelines/clients.json sample_data/acme_clients.csv --force
+
+  dependency-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements-dev.txt
+      - name: Fail on known-vulnerable pinned dependencies
+        run: pip-audit -r requirements.txt --strict --desc
