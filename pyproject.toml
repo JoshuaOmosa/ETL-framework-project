@@ -12,7 +12,7 @@ authors = [{ name = "Joshua Omosa" }]
 requires-python = ">=3.10"
 
 [project.optional-dependencies]
-redis = ["redis==5.2.1"]
+redis = ["redis==8.1.0"]
 
 [project.scripts]
 etl-ingest = "etl_ingest.cli:main"
